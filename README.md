@@ -4,6 +4,8 @@
 
 代码放在sources文件夹
 
+自己代码可以在try文件夹中以自己的名字命名一个文件夹
+
 ## 重要信息
 jupyter notebook address
 
