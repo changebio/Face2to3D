@@ -17,3 +17,12 @@ http://106.75.34.228:82/9b1ec86f-9766-40af-b278-79b329ba8a5d/?token=b53a5f4585a1
 ## 小组
 
 ## 建议
+
+## common git command
+git add .
+
+git commit -m "xxxxxx"
+
+git pull
+
+git push
