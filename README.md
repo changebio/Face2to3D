@@ -23,15 +23,24 @@ Latest Network Architecture and Performance Comparison
 
 ## 数据
 
-** 3D Morphable Model (3DMM) **
+**3D Morphable Model (3DMM)**
+
 - Basel Face Model (BFM)
+
 -- BFM2009 (53490vertices) 
+
 -- BFM2017 (53149vertices)
+
 - Surrey Face Model (SFM)
+
 -- SFM1724
+
 -- SFM3448
+
 -- SFM16759 (No texture) 
+
 -- SFM29587 (No texture)
+
 - Large scale Face Model (LSFM) 
 
 ## 计划
@@ -40,7 +49,7 @@ Latest Network Architecture and Performance Comparison
 
 ## 建议
 
-##Tools
+## Tools
 ### common git command
 ```
 git status
@@ -52,5 +61,6 @@ git pull #equal to git fetch; git merge
 git push
 ```
 
-###basic markdown format
+### basic markdown format
+
 https://help.github.com/en/articles/basic-writing-and-formatting-syntax
