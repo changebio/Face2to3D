@@ -1,10 +1,10 @@
 # Face2to3D
 3D Facial Reconstruction
-资源及相关链接放在material文件夹
+资源及相关链接放在[material](https://github.com/changebio/Face2to3D/tree/master/material)文件夹
 
-代码放在sources文件夹
+代码放在[sources](https://github.com/changebio/Face2to3D/tree/master/sources)文件夹
 
-自己代码可以在try文件夹中以自己的名字命名一个文件夹
+自己代码可以在[try](https://github.com/changebio/Face2to3D/tree/master/try)文件夹中以自己的名字命名一个文件夹
 
 ## 重要信息
 jupyter notebook address
