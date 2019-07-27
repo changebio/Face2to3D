@@ -11,8 +11,11 @@ jupyter notebook address
 
 http://106.75.34.228:82/29601f2d-b8df-47ec-9b10-a006b4e0cef3/?token=a2f7514a1f014c556b0d758db5a738747d761e4702b0cd6e
 ```
-# workflow in remote server after login jupyter
+#Jupyter workflow in remote server after login jupyter
 data -> Face2to3D -> try ->your_code_directory
+#Terminal workflow in remote server
+New -> Terminal
+cd /data/data/Face2to3D/
 ```
 #### 注意事项
 1.尽量不要把**代码或文件**放到data文件夹外。因为可能**丢失文件**。
@@ -20,6 +23,9 @@ data -> Face2to3D -> try ->your_code_directory
 2.在**try**文件夹中的子项目文件夹写和修改代码。尽量不要在sources中修改代码。
 
 3.合作项目代码和资源尽量更新到GitHub，避免大家做重复工作。
+
+**4.记着自己打开的Jupyter Notebook和terminal，避免误会其他人的。（Jupyter Notebook命名规则：名字简写_其他，如 hy_3ddfa.ipynb**
+
 
 ## State-of-Art Models Code
 [3DDFA](https://github.com/changebio/Face2to3D/tree/master/sources/3DDFA)
