@@ -13,7 +13,9 @@ http://106.75.34.228:82/29601f2d-b8df-47ec-9b10-a006b4e0cef3/?token=a2f7514a1f01
 ## State-of-Art Models Code
 [3DDFA](https://github.com/changebio/Face2to3D/tree/master/sources/3DDFA)
 
-[PRNet](https://github.com/changebio/Face2to3D/tree/master/sources/PRNet) [pytorch version](https://github.com/changebio/Face2to3D/tree/master/sources/pytorch-prnet)
+[PRNet](https://github.com/changebio/Face2to3D/tree/master/sources/PRNet) [pytorch version](https://github.com/changebio/Face2to3D/tree/master/sources/pytorch-prnet) [TF training code](https://github.com/changebio/Face2to3D/tree/master/sources/training_codes_for_PRNet_3D_Face)
+
+[Nonlinear 3DMM](https://github.com/changebio/Face2to3D/tree/master/sources/Nonlinear_Face_3DMM)
 
 ## 项目说明
 吾日三省吾身：白否？富否？美否？ 我们将利用三维人脸重建技术，更好地“审视”自己。三维人脸重建是3D计算机视觉中的重要部分，可以广泛应用于三维人脸识别、辅助医疗、个性化3D打印、影视特效、虚拟现实等领域。传统三维人脸重建技术需要根据多视图估计相机运动，并计算每张图像的深度图，需要消耗大量时间及计算资源。利用深度摄像头可以更快速获取图像的深度，在一定程度上减少重建时间，然而对于普通摄像头而言，如何快速重建出三维人脸模型？近年来，随着深度学习技术的发展，从视频中快速重建出三维人脸模型已经变得可能。看腻了二维人脸图像，不妨来挑战一下更高级的3D人脸建模。 
