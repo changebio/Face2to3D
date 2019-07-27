@@ -29,6 +29,11 @@ Face Alignment Across Large Poses/ A 3D Solution
 https://github.com/YadiraF/face3d/blob/master/3D%20Face%20Papers.md
 这有个3D人脸重建的调研文章列表
 
+http://cvlab.cse.msu.edu/project-pifa.html
+水了一堆3D Face Alignment的实验室
+
+https://me.csdn.net/App_12062011
+
 
 https://github.com/menpo/lsfm
 
