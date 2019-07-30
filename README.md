@@ -16,8 +16,17 @@ http://106.75.34.228:82/a8364627-4f91-4130-8fd3-a93240a0f813/?token=f0b7dd0f248a
 data -> Face2to3D -> try ->your_code_directory
 #Terminal workflow in remote server
 New -> Terminal
-cd /data/data/Face2to3D/
+cd /data/data/Face2to3D/try
+
+#conda env in server (base, caffe2, mxnet, tf1.9)
+conda activate base # for tensorflow2.0, keras
+conda activate caffe2 # for Pytorch, caffe2
+conda activate mxnet # for mxnet
+conda activate tf1.9 # for tf1.9
+
 ```
+##### [How can I use version control to collaborate with other people?](https://swcarpentry.github.io/git-novice/08-collab/index.html)
+
 #### 注意事项
 1.尽量不要把**代码或文件**放到data文件夹外。因为可能**丢失文件**。
 
