@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>调取摄像头</title>
+    </head>
+    <body>
+        <video id="video" width="375" height="603" autoplay></video>
+        <button id="start_record" onclick="record()">开始录制</button>
+        <button id = "stop_record" onclick="stop()">停止录制</button>
+        <canvas id="canvas" width="375" height="603"></canvas>
+        <div id="res"></div>
+        <img id="result" width="375" height="603" src=""/>
+        <!-- <canvas id="result" width="375" height="603" src=""></canvas> -->
+    </body>
+
+<script type="text/Javascript">
+    var time = 0;
+    var aVideo = document.getElementById('video');
+
+    navigator.getUserMedia = navigator.getUserMedia ||
+        navigator.webkitGetUserMedia ||
+        navigator.mozGetUserMedia ||
+        navigator.msGetUserMedia;
+    navigator.getUserMedia({
+        audio: false,
+        video: {
+            width:375,
+            height:603
+        }
+    }, gotStream, noStream);
+
+    function gotStream(stream) {
+        video.srcObject = stream;
+        video.onerror = function() {
+            stream.stop();
+        };
+        stream.onended = noStream;
+        video.onloadedmetadata = function() {
+            console.log('摄像头打开');
+        };
+    }
+
+    function noStream(err) {
+        console.log(err);
+    }
+
+    function record(){
+        time = setInterval(function (){
+            getImage();
+        }, 60);
+    }
+    
+
+    function stop(){
+        clearInterval(time);
+        
+    }
+
+    function getImage() {
+        var aCanvas = document.getElementById('canvas');
+        var ctx = aCanvas.getContext('2d');
+        ctx.drawImage(aVideo, 0, 0, 375, 603);
+
+        var imgdata = aCanvas.toDataURL( 'image/jpg' );
+
+        var formdata = new FormData();
+        formdata.append('image', imgdata);
+
+        console.log("origin data == "+imgdata);
+
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+            xmlhttp = new XMLHttpRequest();
+        }
+        else
+        {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        xmlhttp.onreadystatechange=function()
+        {
+            console.log("readyState = " + xmlhttp.readyState);
+            console.log("status = " + xmlhttp.status);
+
+            
+            
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+            {
+                console.log("yes");
+                // resText = document.getElementById("res").innerHTML = xmlhttp.responseText;
+                resText = xmlhttp.responseText;
+                console.log("restext"+resText);
+
+                resJson = JSON.parse(resText);
+                console.log("resjson"+resJson);
+
+
+                // var image = resText.data.image; 
+                var img = document.getElementById("result");
+                // var img = new Image()
+                
+
+                console.log("str = "+String(resJson.image));
+                
+                var imgsrc = 'data:image/jpg;base64,' + String(resJson.image);
+                img.setAttribute("src",imgsrc);
+                console.log("imgsrc == "+imgsrc);
+                
+                // var c = document.getElementById("result");
+                // var context = c.getContext('2d');
+                // context.drawImage(img,0,0,375,603);
+            
+
+                // var imgdata = resText.data;
+                // console.log("imgdata "+imgdata);
+
+                // ctx.beginPath();
+                // ctx.lineWidth="6";
+                // ctx.strokeStyle="res";
+                // ctx.rect(
+                //     resJson['data']['face_list'][0]['x'],
+                //     resJson['data']['face_list'][0]['y'],
+                //     resJson['data']['face_list'][0]['width'],
+                //     resJson['data']['face_list'][0]['height']
+                // );
+                // ctx.stroke();
+            }
+        }
+        xmlhttp.open("POST", "http://127.0.0.1:5000/face_analyze",true);
+        xmlhttp.setRequestHeader("Content-type","application/json");
+        xmlhttp.setRequestHeader("If-Modified-Since","0"); 
+        xmlhttp.setRequestHeader("Cache-Control","no-cache");
+        xmlhttp.send(formdata);
+    }
+
+
+
+
+</script>
+
+
+</html>
