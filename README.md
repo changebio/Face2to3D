@@ -9,7 +9,7 @@
 ## 重要信息
 jupyter notebook address
 
-http://106.75.34.228:82/a8364627-4f91-4130-8fd3-a93240a0f813/?token=f0b7dd0f248ada8e59c422045f43b2e3d1e20c0d047384ab
+http://jupyter-uaitrain-bj2.ucloud.cn:82/ff25f3e5-1b23-43df-b24d-82f963c81ba5/?token=54d44cc6eceb97ba9c6f9ad37beb675273df8ad937c54f19
 
 ```
 #Jupyter workflow in remote server after login jupyter
